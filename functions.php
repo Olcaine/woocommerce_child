@@ -11,4 +11,10 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'bbloomer_custom_action', 
     function bbloomer_custom_action() {
     wc_get_template("templates/stock.php");
     }
+
+add_filter('raw_woocommerce_price', 'xPrice');
+
+    function xPrice($price){
+        return $price * 10;
+    }
  ?>
